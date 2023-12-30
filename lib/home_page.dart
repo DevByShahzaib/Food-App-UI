@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_ui_app/appbar.dart';
 import 'package:food_ui_app/constants.dart';
+import 'package:food_ui_app/search.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,44 +15,19 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppbarWidget,
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Search(),
+          ],
+        ),
+      ),
     );
   }
 }
-
-PreferredSizeWidget AppbarWidget = AppBar(
-  title: Text(
-    'Food App',
-    style: TextStyle(color: Color(0xffb70038)),
-  ),
-  elevation: 0.0,
-  backgroundColor: Color(0xFFF5F5F3),
-  centerTitle: true,
-  leading: InkWell(
-    onTap: () {},
-    child: Container(
-      height: 30,
-      width: 50,
-      decoration: iconDecoration,
-      margin: EdgeInsets.only(left: 10),
-      child: Icon(
-        Icons.menu,
-        color: Colors.black,
-      ),
-    ),
-  ),
-  actions: [
-    InkWell(
-      onTap: () {},
-      child: Container(
-        height: 30,
-        width: 50,
-        margin: EdgeInsets.symmetric(horizontal: 13),
-        decoration: iconDecoration,
-        child: Icon(
-          Icons.notifications_none,
-          color: Colors.black,
-        ),
-      ),
-    )
-  ],
-);

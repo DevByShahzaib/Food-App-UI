@@ -5,7 +5,7 @@ BoxDecoration iconDecoration = BoxDecoration(
     borderRadius: BorderRadius.circular(100),
     boxShadow: [
       BoxShadow(
-          color: Colors.grey.withOpacity(0.5),
+          color: Colors.red.withOpacity(0.5),
           blurRadius: 7,
           spreadRadius: 2,
           offset: Offset(0, 4))
